@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+form {
+    max-width: 100%;
+}
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.control-group {
+    display: block;
+    padding: 8px 16px;
+}
+.control-group + .control-group {
+    margin-top: 10px;
+}
+.control-group + .control-box {
+    max-width: 100%;
+}
+.control-input {
+    display: block;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 1px #aaa;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+}
+.control-group label {
+    display: block;
+    margin-bottom: 6px;
+}
+.number-input {
+    text-align: right;
+}
+.item-form .control-group:nth-child(2n) {
+    background-color: #efefef;
+}
+.button {
+    border: none;
+    height: 36px;
+    background-color: #2f72de;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 4px 10px;
+}
+
+.member-option-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.member-option-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+}
+
+.button-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+    .control-group label {
+        margin-bottom: unset;
+    }
+    .control-group {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+    .control-group.space-between {
+        justify-content: space-between;
+    }
+    .control-group .control-box {
+        margin-left: 6px;
+    }
+    .control-input {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+    }
+}

@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  web:
+    # platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "fg-assignment"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/var/www
+    networks:
+      - my-network
+  mysql_db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: library
+    ports:
+      - "3308:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - my-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: mysql_db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8082:80"
+    networks:
+      - my-network
+volumes:
+  dbdata:
+networks:
+    my-network:
+        driver: bridge
