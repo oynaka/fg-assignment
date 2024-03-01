@@ -61,12 +61,9 @@
                 </div>
             </form>
 
-
-            <hr>
-            <div id="result">
-                @isset($totalPrice)
-                Total Price = {{ $totalPrice }}
-                @endisset
+            <div id="resultContainer" class="result-container">
+                <h4>Sub Total:</h4>
+                <label id="resultValue"></label>
             </div>
         </div>
         <script

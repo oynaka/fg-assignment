@@ -9,8 +9,9 @@ $( "#calculate-form" ).submit(function( event ) {
         data: $('#calculate-form').serialize(),
         success: function(data)
         {
+            $('#resultContainer').addClass('displayed');
             //data - response from server
-            $('#result').html("Total Price = " + data.price);
+            $('#resultValue').html(data.price.toLocaleString());
         },
         dataType: 'json'
       });

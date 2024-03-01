@@ -74,6 +74,26 @@ form {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
+    align-items: center;
+}
+
+.result-container {
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+    border-top: solid 1px #aaaaaa;
+    padding-top: 16px;
+    color: #0000ff;
+}
+.result-container.displayed {
+    display: flex;
+}
+.result-container.displayed h4 {
+    margin: 0 16px 0 auto;
 }
 
 @media screen and (min-width: 768px) {
